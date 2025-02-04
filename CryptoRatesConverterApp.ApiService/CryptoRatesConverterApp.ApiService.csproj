@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CryptoRatesConverterApp.ServiceDefaults\CryptoRatesConverterApp.ServiceDefaults.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.0" />
+        <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="9.0.0" />
+        <PackageReference Include="Aspire.RabbitMQ.Client" Version="9.0.0" />
+        <PackageReference Include="Scalar.AspNetCore" Version="1.2.74" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    </ItemGroup>
+
+</Project>

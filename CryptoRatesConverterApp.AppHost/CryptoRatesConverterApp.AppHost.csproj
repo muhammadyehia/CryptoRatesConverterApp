@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0"/>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsAspireHost>true</IsAspireHost>
+        <UserSecretsId>c7cee99d-9cf7-4a51-ab3b-99a2171ac3cf</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CryptoRatesConverterApp.ApiService\CryptoRatesConverterApp.ApiService.csproj"/>
+        <ProjectReference Include="..\CryptoRatesConverterApp.Web\CryptoRatesConverterApp.Web.csproj"/>
+        <ProjectReference Include="..\CryptoRatesConverterApp.CoinMarketCapSync\CryptoRatesConverterApp.CoinMarketCapSync.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0"/>
+        <PackageReference Include="Aspire.Hosting.Redis" Version="9.0.0"/>
+        <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="9.0.0"/>
+    </ItemGroup>
+
+</Project>

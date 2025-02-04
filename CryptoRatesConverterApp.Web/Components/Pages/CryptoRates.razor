@@ -1,0 +1,129 @@
+@page "/cryptorates"
+@rendermode InteractiveServer
+@using System.Net.Http.Json
+@inject CryptoRatesClient CryptoRatesClient
+
+<PageTitle>Crypto Rates</PageTitle>
+
+<h1>Crypto Rates</h1>
+
+<EditForm Model="@cryptoRequest" OnValidSubmit="GetRates">
+    <div class="form-group mb-3">
+        <label for="symbol">Cryptocurrency Symbol (e.g., BTC, ETH):</label>
+        <div class="input-group">
+            <InputText id="symbol" class="form-control" @bind-Value="cryptoRequest.Symbol" placeholder="Enter symbol..." />
+            <button type="submit" class="btn btn-primary" disabled="@loading">
+                @if (loading)
+                {
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <span> Loading...</span>
+                }
+                else
+                {
+                    <span>Get Rates</span>
+                }
+            </button>
+        </div>
+    </div>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <div class="alert alert-danger mt-3 d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Error:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+        <div class="ms-2">
+            @error
+        </div>
+    </div>
+}
+
+@if (cryptoRates?.Any() == true)
+{
+    <div class="table-responsive mt-4">
+        <table class="table table-striped table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Currency</th>
+                    <th class="text-end">Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rate in cryptoRates.OrderBy(r => r.Key))
+                {
+                    <tr>
+                        <td>@rate.Key</td>
+                        <td class="text-end">@rate.Value.ToString("N2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private CryptoRequest cryptoRequest = new();
+    private Dictionary<string, decimal>? cryptoRates;
+    private string error = string.Empty;
+    private bool loading;
+
+    private class CryptoRequest
+    {
+        public string Symbol { get; set; } = string.Empty;
+    }
+
+    private async Task GetRates()
+    {
+        try
+        {
+            loading = true;
+            error = string.Empty;
+            cryptoRates = null;
+
+            if (string.IsNullOrWhiteSpace(cryptoRequest.Symbol))
+            {
+                error = "Please enter a cryptocurrency symbol";
+                return;
+            }
+
+            cryptoRequest.Symbol = cryptoRequest.Symbol.Trim().ToUpperInvariant();
+            
+            if (!IsValidSymbol(cryptoRequest.Symbol))
+            {
+                error = $"Invalid cryptocurrency symbol format: {cryptoRequest.Symbol}. Please use 3-5 letters (e.g., BTC, ETH, USDT)";
+                return;
+            }
+
+            cryptoRates = await CryptoRatesClient.GetRatesAsync(cryptoRequest.Symbol);
+            
+            if (cryptoRates?.Any() != true)
+            {
+                error = $"No rates found for {cryptoRequest.Symbol}. Please check if the symbol is correct.";
+                return;
+            }
+        }
+        catch (HttpRequestException)
+        {
+            error = $"Unable to fetch rates for {cryptoRequest.Symbol}. The cryptocurrency symbol might not exist or there might be a connection issue.";
+            cryptoRates = null;
+        }
+        catch (Exception)
+        {
+            error = $"An unexpected error occurred while fetching rates for {cryptoRequest.Symbol}. Please try again later.";
+            cryptoRates = null;
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private bool IsValidSymbol(string symbol)
+    {
+        return !string.IsNullOrEmpty(symbol) && 
+               symbol.Length >= 3 && 
+               symbol.Length <= 5 && 
+               symbol.All(char.IsLetter);
+    }
+} 

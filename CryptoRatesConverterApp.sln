@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.AppHost", "CryptoRatesConverterApp.AppHost\CryptoRatesConverterApp.AppHost.csproj", "{F327D4FC-9B3F-4553-8ED1-8394E398C90D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.CoinMarketCapSync", "CryptoRatesConverterApp.CoinMarketCapSync\CryptoRatesConverterApp.CoinMarketCapSync.csproj", "{D3CD6ADB-5EB4-41DD-A71F-622B301EFF1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.ApiService", "CryptoRatesConverterApp.ApiService\CryptoRatesConverterApp.ApiService.csproj", "{A6AC6265-055A-4E56-86E8-AB13F5E20249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.Web", "CryptoRatesConverterApp.Web\CryptoRatesConverterApp.Web.csproj", "{B1DAABC4-87F5-4E77-BEAB-DCE1A2C58C34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.ApiService.BDD.Test", "CryptoRatesConverterApp.ApiService.BDD.Test\CryptoRatesConverterApp.ApiService.BDD.Test.csproj", "{5F01927D-CB68-4C84-B103-E81EBD38F762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.CoinMarketCapSync.BDD.Test", "CryptoRatesConverterApp.CoinMarketCapSync.BDD.Test\CryptoRatesConverterApp.CoinMarketCapSync.BDD.Test.csproj", "{9A60C01C-4413-4504-8FEC-9B180C6EF1D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoRatesConverterApp.ServiceDefaults", "CryptoRatesConverterApp.ServiceDefaults\CryptoRatesConverterApp.ServiceDefaults.csproj", "{6C71C6ED-5D28-482F-BE0D-68DD1ACEB976}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F327D4FC-9B3F-4553-8ED1-8394E398C90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F327D4FC-9B3F-4553-8ED1-8394E398C90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F327D4FC-9B3F-4553-8ED1-8394E398C90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F327D4FC-9B3F-4553-8ED1-8394E398C90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3CD6ADB-5EB4-41DD-A71F-622B301EFF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CD6ADB-5EB4-41DD-A71F-622B301EFF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CD6ADB-5EB4-41DD-A71F-622B301EFF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CD6ADB-5EB4-41DD-A71F-622B301EFF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AC6265-055A-4E56-86E8-AB13F5E20249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AC6265-055A-4E56-86E8-AB13F5E20249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AC6265-055A-4E56-86E8-AB13F5E20249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AC6265-055A-4E56-86E8-AB13F5E20249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1DAABC4-87F5-4E77-BEAB-DCE1A2C58C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1DAABC4-87F5-4E77-BEAB-DCE1A2C58C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1DAABC4-87F5-4E77-BEAB-DCE1A2C58C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1DAABC4-87F5-4E77-BEAB-DCE1A2C58C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F01927D-CB68-4C84-B103-E81EBD38F762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F01927D-CB68-4C84-B103-E81EBD38F762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F01927D-CB68-4C84-B103-E81EBD38F762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F01927D-CB68-4C84-B103-E81EBD38F762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A60C01C-4413-4504-8FEC-9B180C6EF1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A60C01C-4413-4504-8FEC-9B180C6EF1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A60C01C-4413-4504-8FEC-9B180C6EF1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A60C01C-4413-4504-8FEC-9B180C6EF1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C71C6ED-5D28-482F-BE0D-68DD1ACEB976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C71C6ED-5D28-482F-BE0D-68DD1ACEB976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C71C6ED-5D28-482F-BE0D-68DD1ACEB976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C71C6ED-5D28-482F-BE0D-68DD1ACEB976}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
