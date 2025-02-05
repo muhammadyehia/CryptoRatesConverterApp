@@ -1,4 +1,4 @@
-# KnabCryptoRatesConverterApp
+# Crypto Rates Converter App
 
 A modern, distributed application for real-time cryptocurrency rate conversion built with .NET Aspire.
 
@@ -28,25 +28,25 @@ You'll need to obtain the following API keys:
 
 The solution consists of the following projects:
 
-1. **KnabCryptoRatesConverterApp.AppHost**
+1. **CryptoRatesConverterApp.AppHost**
    - Orchestrates the entire application using .NET Aspire
    - Manages container lifecycle and service dependencies
 
-2. **KnabCryptoRatesConverterApp.ServiceDefaults**
+2. **CryptoRatesConverterApp.ServiceDefaults**
    - Contains shared service configurations
    - Implements common features like health checks and telemetry
 
-3. **KnabCryptoRatesConverterApp.CoinMarketCapSync**
+3. **CryptoRatesConverterApp.CoinMarketCapSync**
    - Background service that fetches crypto rates from CoinMarketCap
    - Publishes rate updates to RabbitMQ
    - Implements resilient HTTP clients with retry policies
 
-4. **KnabCryptoRatesConverterApp.ApiService**
+4. **CryptoRatesConverterApp.ApiService**
    - REST API for accessing crypto rates
    - Consumes messages from RabbitMQ
    - Caches rates in Redis
 
-5. **KnabCryptoRatesConverterApp.Web**
+5. **CryptoRatesConverterApp.Web**
    - Web frontend for the application
    - Communicates with the API service
 
@@ -72,7 +72,7 @@ cd KnabCryptoRatesConverterApp
 
 3. Run the application:
 ```bash
-cd KnabCryptoRatesConverterApp.AppHost
+cd CryptoRatesConverterApp.AppHost
 dotnet run
 ```
 
@@ -134,7 +134,7 @@ The application follows a microservices architecture pattern with the following 
 
 BDD Tests:
 ```bash
-dotnet test KnabCryptoRatesConverterApp.*.BDD.Test
+dotnet test CryptoRatesConverterApp.*.BDD.Test
 ```
 
 ## Development
