@@ -1,23 +1,11 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">KnabCryptoRatesConverterApp</a>
-    </div>
+﻿<div class="px-3 mb-3">
+    <h5 class="text-light">Main Menu</h5>
 </div>
-
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="cryptorates">
-                <span class="bi bi-currency-bitcoin" aria-hidden="true"></span> Crypto Rates
-            </NavLink>
-        </div>
-    </nav>
+<div class="nav flex-column nav-pills">
+    <NavLink class="nav-link mb-2 text-light" href="" Match="NavLinkMatch.All">
+        <i class="bi bi-house-door-fill me-2"></i> Home
+    </NavLink>
+    <NavLink class="nav-link mb-2 text-light" href="cryptorates">
+        <i class="bi bi-currency-bitcoin me-2"></i> Crypto Rates
+    </NavLink>
 </div>
